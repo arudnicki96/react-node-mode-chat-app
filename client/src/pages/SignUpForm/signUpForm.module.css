@@ -1,0 +1,25 @@
+.container {
+    color: DodgerBlue;
+    padding: 40px;
+    font-family: Sans-Serif;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+}
+.form input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 200px;
+}
+.form div {
+    display: flex;
+    flex-direction: column;
+}
+.button {
+    height: 80px;
+}
