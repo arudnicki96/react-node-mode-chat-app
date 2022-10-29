@@ -1,4 +1,5 @@
-type SignUpInputConfiguration = {
+/* eslint-disable no-useless-escape */
+export type SignUpInputConfiguration = {
     placeholder: string | number;
     label: string;
     key: string;
@@ -12,7 +13,8 @@ const rules = {
     password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[A-Za-z\d!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}$/,
     nickname: /[a-zA-Z0-9]/,
     gender: /^(Male|Female)$/,
-    birthdate: /^(?:(?:(?:0?[13578]|1[02])(\/|-|\.)31)\1|(?:(?:0?[1,3-9]|1[0-2])(\/|-|\.)(?:29|30)\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:0?2(\/|-|\.)29\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\/|-|\.)(?:0?[1-9]|1\d|2[0-8])\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/,
+    birthdate : /^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$/
+
 
 
 }
@@ -26,7 +28,7 @@ export const signUpInputConfiguration: SignUpInputConfiguration[] = [
         pattern: rules.firstName
     },
     {
-        key: 'dateOfBirth',
+        key: 'birthDate',
         label: 'Date Of Birth',
         placeholder: 'Date Of Birth',
         type: 'date',

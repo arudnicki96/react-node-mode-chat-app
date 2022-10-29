@@ -1,11 +1,9 @@
 const express = require('express');
+const usersRouter = require('./routes/usersRouter');
+
 const app = express();
 
-app.get('/api', (req, res)=> {
-    res.json({"users": ['userOne',"userTwo","userThree"]})
-})
+app.use(express.json());
 
+app.use('/users', usersRouter);
 module.exports = app
-// app.listen(5000, ()=> {
-//     console.log("server started on port 5000")
-// })

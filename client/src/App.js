@@ -1,13 +1,16 @@
 import React from 'react';
-import {useState, useEffect} from "react";
+import {
+    QueryClient,
+    QueryClientProvider,
+} from '@tanstack/react-query'
 import SignUpForm from "./pages/SignUpForm/SignUpForm.tsx";
 
 function App() {
-
+const queryClient = new QueryClient()
   return (
-    <div className="App">
+   <QueryClientProvider client={queryClient}>
         <SignUpForm />
-    </div>
+   </QueryClientProvider>
   );
 }
 
