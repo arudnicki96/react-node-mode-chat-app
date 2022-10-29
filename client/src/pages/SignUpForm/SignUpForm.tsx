@@ -10,16 +10,13 @@ const SignUpForm: React.FC = () => {
     const { register, handleSubmit, formState } = useForm({
         mode: 'onChange'
     });
+    //createAccount has no type
     const {mutate: createAccount} = useMutation(createUser, {
         onSuccess: (res) => console.log(res),
         onError: (err) => console.log(err)
     })
-
-    const onSubmit = (data: CreateUserRequest) => {
-        createAccount(data)
-    }
     return (<div className={styles.container}>
-        <form onSubmit={handleSubmit(onSubmit)} className={styles.form} >
+        <form onSubmit={handleSubmit((data: CreateUserRequest)=>{createAccount(data)})} className={styles.form} >
             {signUpInputConfiguration.map((inputConfiguration: SignUpInputConfiguration) => {
                 return (
                     <div>
